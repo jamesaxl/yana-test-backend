@@ -17,13 +17,7 @@ class IsEnabled
     public function handle(Request $request, Closure $next)
     {
         if (false === auth()->user()->is_enabled) {
-            return response()->json(
-                [
-                    'error' => 1,
-                    'message' => 'account not enabled'
-                ]
-                , 401
-            );
+            return  response()->errorAuth('account not enabled');
         }
         return $next($request);
     }

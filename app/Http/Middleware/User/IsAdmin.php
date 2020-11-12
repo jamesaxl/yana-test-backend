@@ -17,13 +17,7 @@ class IsAdmin
     public function handle(Request $request, Closure $next)
     {
         if ('admin' != auth()->user()->role->name) {
-            return response()->json(
-                [
-                    'error' => 1,
-                    'message' => 'permission denied'
-                ]
-                , 401
-            );
+            return response()->errorAuth('permission denied');
         }
         return $next($request);
     }
