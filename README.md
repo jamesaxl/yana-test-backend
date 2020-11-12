@@ -19,6 +19,7 @@ Backend:
 >> php artisan storage:link
 >> php artisan serve
 ```
+Default user: admin@dev.com, password: secret
 
 frontend;
 

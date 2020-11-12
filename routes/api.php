@@ -24,15 +24,15 @@ Route::post('/login', [PassPortController::class, 'login']);
 
 Route::middleware('auth:api')->group(function () {
 
-//    Route::middleware('is.enabled')->group(function () {
+    Route::middleware('is.enabled')->group(function () {
         Route::prefix('user')->group(function () {
-//            Route::middleware('is.admin')->group(function () {
+            Route::middleware('is.admin')->group(function () {
                 Route::post('/store', [UserController::class, 'store']);
                 Route::get('/all', [UserController::class, 'index']);
                 Route::get('/show/{id}', [UserController::class, 'show']);
                 Route::post('/update/{id}', [UserController::class, 'update']);
                 Route::delete('/delete/{id}', [UserController::class, 'delete']);
-//            });
+            });
             Route::post('/logout', [PassPortController::class, 'logout']);
         });
 
@@ -64,5 +64,5 @@ Route::middleware('auth:api')->group(function () {
             Route::delete('/delete/{id}', [ProductController::class, 'delete']);
         });
         
-//    });
+    });
 });
