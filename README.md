@@ -20,6 +20,7 @@ Backend:
 >> php artisan serve
 ```
 Default user: admin@dev.com, password: secret
+Phone format: 01XXXXXXXXX *you are need for creating provider*
 
 frontend;
 
@@ -27,7 +28,7 @@ frontend;
 >> cd /path/of/project/frontend
 >> cp env.sample .env # do not forget to set the url or ip of your server API (LARAVEL)
 >> npm install
->> npm watch
+>> npm run serve
 ```
 # conclusion
 
